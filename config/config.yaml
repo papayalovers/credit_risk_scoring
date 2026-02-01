@@ -1,0 +1,79 @@
+features:
+  categorical:
+  - person_home_ownership
+  - loan_intent
+  - loan_grade
+  numerical:
+  - person_age
+  - person_income
+  - person_emp_length
+  - loan_amnt
+  - loan_int_rate
+  - loan_status
+  - loan_percent_income
+  - cb_person_cred_hist_length
+path:
+  path_config: config/config.yaml
+  raw_data: data/raw/credit_risk_dataset.csv
+  processed_data: data/processed
+schema:
+  cb_person_cred_hist_length:
+    minimum: 0
+    type: integer
+  cb_person_default_on_file:
+    enum:
+    - Y
+    - N
+    type: string
+  loan_amnt:
+    minimum: 100
+    type: integer
+  loan_grade:
+    enum:
+    - A
+    - B
+    - C
+    - D
+    - E
+    - F
+    - G
+    type: string
+  loan_int_rate:
+    minimum: 0.0
+    type: decimal
+  loan_intent:
+    enum:
+    - PERSONAL
+    - EDUCATION
+    - MEDICAL
+    - VENTURE
+    - HOMEIMPROVEMENT
+    - DEBTCONSOLIDATION
+    type: string
+  loan_percent_income:
+    minimum: 0.0
+    type: decimal
+  loan_status:
+    enum:
+    - 1
+    - 0
+    type: integer
+  person_age:
+    maximum: 100
+    minimum: 18
+    type: integer
+  person_home_ownership:
+    enum:
+    - RENT
+    - OWN
+    - MORTGAGE
+    - OTHER
+    type: string
+  person_income:
+    minimum: 0
+    type: integer
+  person_emp_length:
+    minimum: 0
+    type: integer
+target:
+- cb_person_default_on_file

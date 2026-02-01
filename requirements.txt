@@ -1,0 +1,10 @@
+pandas
+scikit-learn
+imblearn
+joblib
+numpy
+scipy
+seaborn
+fastapi
+requests
+pyyaml
